@@ -1,0 +1,3 @@
+This is the first line of file management basics
+And this is the second line
+This is the very last line
