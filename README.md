@@ -15,7 +15,7 @@ To start with this tutorial, it is important to talk about the most basic compil
 
 Makefile directives are just like executing any of the commands included into it right from the terminal, with the difference that you can take advantage of many symbols into the Makefile to create a simplified and fully automated execution file.
 
-#### Makefile symbols
+### Makefile symbols
 You can have many symbols into a Makefile, but the most useful and basic to come up with your Makefile are the following:
 1. Hash (`#`): This symbol is used to start a comment in a Makefile. Which means that the text following the hash will be ignored by Make.
 2. Dollar sign (`$`): The usage of this symbol is to use variables throughout your code, so that you can make your Makefile look more readable. The usage is by setting into the Makefile command `$(your_variable)`, where your variable is something you have defined before executing this command.
@@ -27,7 +27,7 @@ You can have many symbols into a Makefile, but the most useful and basic to come
 
 4. Equals sign (`=`): The equals sign is used to define variables with simple syntax, which means, bringing a value into the variable, just like line `SOURCES = ./src/*.c` do. 
 
-#### Tree-Structured Makefile execution
+### Tree-Structured Makefile execution
 
 Lets see an example into the Makefile of this repository, lets say you want to execute `Run_File_Management_Basics` rule, thus, this is what will happen:
 1. You need to execute first the rule `$(FILENAME)`, since it is a dependency of my rule of interest.
