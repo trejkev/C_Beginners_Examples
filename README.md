@@ -5,6 +5,10 @@ These examples are quite simple, they provide a brief introduction to pointers, 
 
 All tests are passing through Base_Examples.c file, it contains the main method that calls every routine according to the user input. The execution is quite simple, it can be done by simply using the Makefile attached to this repository.
 
+## Running the code
+
+Running the code is quite symple, all the links are already in place, you just need to run `make Run_Pointer_Basics`, `make Run_Register_Basics`, or `make Run_File_Management_Basics` to clear the bin directory from any older build, create the output files required, and finally, create the executable file containing all the output files made before. Depending on the run you want to perform, there are some inputs required, these inptus are defaulted to be something to bring you a brief example of how to use each of these, but you can easily modify them. Each example and their outputs will be explained in further sections of this readme file.
+
 ## Makefiles
 
 To start with this tutorial, it is important to talk about the most basic compile and usage of Makefiles, it is not intended to bring you a full explanation of any compiler, but to give you an idea of what every directive means and how you cam take advantage of them to create a simple but powerful Makefile.
