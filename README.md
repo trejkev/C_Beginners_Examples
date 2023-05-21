@@ -15,7 +15,9 @@ You can have many symbols into a Makefile, but the most useful and basic to come
 1. Hash (`#`): This symbol is used to start a comment in a Makefile. Which means that the text following the hash will be ignored by Make.
 2. Dollar sign (`$`): The usage of this symbol is to use variables throughout your code, so that you can make your Makefile look more readable. The usage is by setting into the Makefile command `$(your_variable)`, where your variable is something you have defined before executing this command.
 3. Colon (`:`): This symbol is used to define a target and its dependencies in a rule. It separates the target from its prerequisites. You can use it in a way that you define a rule name, type the colon, and then the dependencies to be run before running this rule. For example, to run the directive pointed by rule named Run_Pointer_Basics, you need to first run the rule pointed by variable `$(FILENAME)`, which can also have other dependencies, and so on, after all these dependencies are executed in a tree-shaped form, Run_Pointer_Basics rule will be executed, which runs the command `./bin/$(FILENAME) Pointer_Basics`.
+
 <p align="center">
   <img src="https://github.com/trejkev/C_Beginners_Examples/assets/18760154/47b0d3dd-3c60-41f5-b1bc-294e6346950b" />
 </p>
+
 4. Equals sign (`=`): The equals sign is used to define variables with simple syntax, which means, bringing a value into the variable, just like line `SOURCES = ./src/*.c` do. 
