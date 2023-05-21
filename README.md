@@ -35,4 +35,9 @@ Lets see an example into the Makefile of this repository, lets say you want to e
 3. Once dependencies that contain commands to execute (because they are also rules), like clean, that runs `-rm -f ./bin/*.o ./bin/$(FILENAME)`, and other dependencies, like headers, are run, it will run the `$(FILENAME)` rule, that runs the command `$(CLANG) $(FLAGS) $(BINARIES) -o ./bin/$(FILENAME)`.
 4. Finally, it will run the command contained by our rule of interest, which is `Run_File_Management_Basics`, and executes `./bin/$(FILENAME) File_Management_Basics ./test/File_Management_Basics_Example.txt` command. 
 
-See how all the commands were able to execute only when all their dependencies were executed, so that this becomes a tree-structured execution problem, therefore, be careful of including only dependencies that you really need to execute your rule, otherwise you can end up with a lot of thrash files, a high pre-execution time, or an oversized executable file.
+See how all the commands were able to execute only when all their dependencies were executed, so that this becomes a tree-structured execution problem, therefore, be careful of including only dependencies that you really need to execute your rule, otherwise you can end up with a lot of thrash files, a high pre-execution time, or an oversized executable file. See the following figure to graphically understand what is happening.
+
+<p align="center">
+  <img src="https://github.com/trejkev/C_Beginners_Examples/assets/18760154/554b9aa1-d68b-4b31-ae8c-6d4eb11e3319" />
+</p>
+
