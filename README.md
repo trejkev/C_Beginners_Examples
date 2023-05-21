@@ -25,3 +25,11 @@ You can have many symbols into a Makefile, but the most useful and basic to come
 </p>
 
 4. Equals sign (`=`): The equals sign is used to define variables with simple syntax, which means, bringing a value into the variable, just like line `SOURCES = ./src/*.c` do. 
+
+Lets see an example into the Makefile of this repository, lets say you want to execute `Run_File_Management_Basics` rule, thus, this is what will happen:
+1. You need to execute first the rule `$(FILENAME)`, since it is a dependency of my rule of interest.
+2. The rule `$(FILENAME)` also depends of a set of rules and files, in this case the rules `clean`, `Base_Examples.o`, `Pointer_Basics.o`, `Register_Basics.o`, and `File_Management_Basics.o`, and the header file `./src/Base_Examples.h`, reason why you need to execute them before executing `$(FILENAME)`'s command. Consider that the dependencies are executed from left to right, in order of appearance into the dependencies of the rule.
+3. Once dependencies that contain commands to execute (because they are also rules), like clean, that runs `-rm -f ./bin/*.o ./bin/$(FILENAME)`, and other dependencies, like headers, are run, it will run the `$(FILENAME)` rule, that runs the command `$(CLANG) $(FLAGS) $(BINARIES) -o ./bin/$(FILENAME)`.
+4. Finally, it will run the command contained by our rule of interest, which is `Run_File_Management_Basics`, and executes `./bin/$(FILENAME) File_Management_Basics ./test/File_Management_Basics_Example.txt` command. 
+
+See how all the commands were able to execute only when all their dependencies were executed, so that this becomes a tree-structured execution problem, therefore, be careful of including only dependencies that you really need to execute your rule, otherwise you can end up with a lot of thrash files, a high pre-execution time, or an oversized executable file.
