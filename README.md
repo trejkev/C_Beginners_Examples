@@ -26,6 +26,8 @@ You can have many symbols into a Makefile, but the most useful and basic to come
 
 4. Equals sign (`=`): The equals sign is used to define variables with simple syntax, which means, bringing a value into the variable, just like line `SOURCES = ./src/*.c` do. 
 
+### Tree-Structured Makefile execution
+
 Lets see an example into the Makefile of this repository, lets say you want to execute `Run_File_Management_Basics` rule, thus, this is what will happen:
 1. You need to execute first the rule `$(FILENAME)`, since it is a dependency of my rule of interest.
 2. The rule `$(FILENAME)` also depends of a set of rules and files, in this case the rules `clean`, `Base_Examples.o`, `Pointer_Basics.o`, `Register_Basics.o`, and `File_Management_Basics.o`, and the header file `./src/Base_Examples.h`, reason why you need to execute them before executing `$(FILENAME)`'s command. Consider that the dependencies are executed from left to right, in order of appearance into the dependencies of the rule.
